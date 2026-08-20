@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- making a simple card for shop detail -->
+     <h2 style="color:blue">Shop Details</h2>
+     <div style="width: 300px; border: 5px solid grey; padding: 20px; display: flex; flex-direction: column; align-items: center;">
+
+        
+        <p style="font-weight: bold;">Tea: 450</p>
+        <p style="font-weight: bold;">Coffee: 400</p>
+        <p style="font-weight: bold;">Sugar: 300</p>
+        <p style="font-weight: bold;">Pulses: 100</p>
+
+
+
+     </div>
+    <script>
+        //prompt to create to use which produt and enter your quantity and your totol cost will be and then put
+        const shop={
+            tea:450,
+            coffee:400,
+            sugar:300,
+            pulses:100
+        }
+        let a=prompt("enter the product name:");
+        document.write("<br>Your product name is:"+a);
+        for(let key in shop){
+            if(a==key){
+                let b=prompt("enter the quantity:");
+                document.write("<br>Your quantity is:"+b);
+                document.write("<br>Your total cost is:"+(b*shop[key]));
+            }
+        }
+        // put the image of prodct which choose using a loop 
+        
+        //document.write("<br><img src='images/"+a+".jpeg' alt='"+a+"' style='width: 100px; height: 100px;'>");
+
+       
+            if(a==tea){
+                document.write("<br><img src='images/"+a+".jpeg' alt='"+a+"' style='width: 100px; height: 100px;'>");
+            }
+            if(a==coffee){
+                document.write("<br><img src='coffee/"+a+".jpeg' alt='"+a+"' style='width: 100px; height: 100px;'>");
+            }
+            if(a==sugar){
+                document.write("<br><img src='sugar/"+a+".jpeg' alt='"+a+"' style='width: 100px; height: 100px;'>");
+            }
+            if(a==pulses){
+                document.write("<br><img src='pulses/"+a+".jpeg' alt='"+a+"' style='width: 100px; height: 100px;'>");
+            }
+        
+
+        
+    </script>
+</body>
+</html>
