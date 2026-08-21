@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+const data1 = { name1: "vansh", degree: "b-tech", fee: 100000 };
+const data2 = { name1: "rishi", degree: "b-tech", fee: 100000 };
+const data3 = { name1: "tanmay", degree: "pharamacy", fee: 100000 };
+const data4 = { name: "satyapal", degree: "mtech", fee: 100000 };
+const data5 = { name: "gupta", degree: "agriculture", fee: 100000 };
+
+const arr = [data1, data2, data3, data4, data5];
+const choice = prompt("Enter the preferred branch (e.g., b-tech, pharamacy, mtech, agriculture):");
+
+if (choice) {
+    const searchBranch = choice.trim().toLowerCase();
+
+    const filteredStudents = arr.filter(student => student.degree.toLowerCase() === searchBranch);
+    console.log("Filtered Students:", filteredStudents);
+
+     const studentNames = filteredStudents.map(student => student.name1 || student.name);
+     console.log(`Student names in ${choice}:`, studentNames);
+
+     const totalBranchFee = filteredStudents.reduce((total, student) => total + student.fee, 0);
+     console.log(`Total fee collected for ${choice}:`, totalBranchFee);
+    
+    if (filteredStudents.length > 0) {
+        document.write(`Found ${filteredStudents.length} student(s) in ${choice}: ${studentNames.join(", ")}\nTotal Fees: ${totalBranchFee}`);
+    } else {
+        document.write(`No students found for branch: ${choice}`);
+    }
+}
+</script>
+</body>
+</html>
